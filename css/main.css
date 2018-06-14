@@ -275,7 +275,29 @@ nav.responsive-menu a {
   background-position: center;
 }
 
+.logo-container {
+  width: 100%;
+  text-align: center;
+}
+
 .logo {
+  height: 250px;
+  width: 250px;
+  padding-top: 100px;
+  display: inline-block;
+  vertical-align: middle;
+  text-indent: -9999px;
+  background: url(../img/logo.png);
+  background: url(../img/logo.svg), linear-gradient(transparent, transparent);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  display: table;
+  margin: 0 auto;
+}
+
+/*.logo {
   position: absolute;
   top: 15%;
   left: 50%;
@@ -289,7 +311,7 @@ nav.responsive-menu a {
   background-repeat: no-repeat;
   background-position: center;
   z-index: 1;
-}
+}*/
 
 .hero-bottom {
   position: absolute;
@@ -498,7 +520,6 @@ nav.responsive-menu a {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
   vertical-align: middle;
-
   background: white;
   color: #002554;
   height: 70px;
@@ -585,13 +606,11 @@ nav.responsive-menu a {
   }
 }
 
-@media (max-width: 400px)
-{
+@media (max-width: 400px) {
   .btn-5 {
     width: 100%;
     font-size: 14px;
   }
-
   .btn-5:before {
     line-height: 5;
   }
