@@ -129,11 +129,11 @@ nav.responsive-menu a {
 }
 
 .responsive-menu {
-  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%);
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfffffff', endColorstr='#00ffffff', GradientType=0);
   /* IE6-9 */
@@ -141,10 +141,11 @@ nav.responsive-menu a {
   -webkit-font-smoothing: antialiased;
   height: 50px;
   overflow: hidden;
-  -webkit-transition: height 0.5s;
-  -moz-transition: height 0.5s;
-  -ms-transition: height 0.5s;
-  transition: height 0.5s;
+  -webkit-transition: transform 0.5s linear;
+  -moz-transition: transform 0.5s linear;
+  -ms-transition: transform 0.5s linear;
+  transition: transform 0.5s linear;
+  will-change: transform;
 }
 
 .responsive-menu.open {
@@ -269,13 +270,51 @@ nav.responsive-menu a {
   z-index: -100;
   height: 100vh;
   width: 100%;
-  background-image: url(../img/banner.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
+.logo-container {
+  width: 100%;
+  text-align: center;
+}
+
 .logo {
+  height: 250px;
+  width: 250px;
+  padding-top: 100px;
+  display: inline-block;
+  vertical-align: middle;
+  text-indent: -9999px;
+  background: url(../img/logo.png);
+  background: url(../img/logo.svg), linear-gradient(transparent, transparent);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  display: table;
+  margin: 0 auto;
+}
+
+.mgn-logo {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  text-indent: -9999px;
+  background: url(../img/mgn-logo.png);
+  background: url(../img/mgn-logo.svg), linear-gradient(transparent, transparent);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  display: table;
+  margin: 0 auto;
+
+}
+
+/*.logo {
   position: absolute;
   top: 15%;
   left: 50%;
@@ -289,7 +328,7 @@ nav.responsive-menu a {
   background-repeat: no-repeat;
   background-position: center;
   z-index: 1;
-}
+}*/
 
 .hero-bottom {
   position: absolute;
@@ -309,6 +348,13 @@ nav.responsive-menu a {
   .hero-section {
     position: relative;
     margin-top: -70px;
+    background-image: url(../img/banner-small.png);
+  }
+}
+
+@media (min-width: 769px) {
+  .hero-section {
+    background-image: url(../img/banner.png);
   }
 }
 
@@ -498,7 +544,6 @@ nav.responsive-menu a {
   -moz-transition: all 0.3s;
   transition: all 0.3s;
   vertical-align: middle;
-
   background: white;
   color: #002554;
   height: 70px;
@@ -585,13 +630,11 @@ nav.responsive-menu a {
   }
 }
 
-@media (max-width: 400px)
-{
+@media (max-width: 400px) {
   .btn-5 {
     width: 100%;
     font-size: 14px;
   }
-
   .btn-5:before {
     line-height: 5;
   }
